@@ -13,3 +13,11 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+const isAdmin = process.env.IS_ADMIN === 'true';
+
+if (isAdmin) {
+  console.log("Admin privileges granted.");
+} else {
+  console.log("Access restricted. Admin only.");
+}
